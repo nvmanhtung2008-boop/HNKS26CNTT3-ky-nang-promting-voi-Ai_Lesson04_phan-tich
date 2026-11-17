@@ -1,0 +1,32 @@
+{
+  "step_1_validation": {
+    "status": "DỪNG_XỬ_LÝ_TỰ_ĐỘNG",
+    "provided_order_id": null,
+    "error_code": "THIẾU_HOẶC_SAI_MÃ_ĐƠN",
+    "validation_details": {
+      "is_order_id_valid": false,
+      "is_complaint_content_complete": false,
+      "message": "Mã đơn hàng không tồn tại hoặc bị bỏ trống trong dữ liệu đầu vào. Hệ thống dừng tiến trình tự động và chuyển sang nhân sự xử lý thủ công."
+    }
+  },
+  "step_2_reasoning": {
+    "chain_of_thought": [
+      "1. Kiểm tra trường 'provided_order_id': Phát hiện dữ liệu trống.",
+      "2. Đánh giá rủi ro đứt gãy: Vi phạm điều kiện tiên quyết để đối chiếu chính sách đổi trả.",
+      "3. Kích hoạt cơ chế phòng vệ: Ngăn chặn tuyệt đối việc AI tự suy diễn thông tin đơn hàng giả mạo."
+    ],
+    "policy_matching": {
+      "issue_type": "Không xác định",
+      "applicable_policy": "N/A",
+      "compliance_status": "Không thể đối chiếu do thiếu dữ liệu định danh đơn hàng"
+    }
+  },
+  "step_3_action_and_response": {
+    "internal_operational_action": "Chuyển ticket khiếu nại này sang hàng đợi (queue) xử lý thủ công của bộ phận CSKH để gọi điện hoặc nhắn tin trực tiếp xác minh mã đơn hàng với khách.",
+    "customer_response_template": {
+      "greeting": "Kính gửi Quý khách,",
+      "body": "Chúng tôi đã nhận được thông tin khiếu nại của Quý khách. Tuy nhiên, mã đơn hàng hiện đang trống hoặc không chính xác trong hệ thống. Quý khách vui lòng cung cấp lại chính xác mã đơn hàng để chúng tôi hỗ trợ xử lý nhanh chóng nhất.",
+      "closing": "Trân trọng cảm ơn Quý khách."
+    }
+  }
+}
